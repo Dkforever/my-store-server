@@ -44,6 +44,10 @@ const productSchema = mongoose.Schema({
       type: String,
       }
   }],
+  stock:{
+    type:Number,
+    default:1,
+  },
 
   //all model without model having id
   // modelList: [
@@ -80,6 +84,11 @@ admin: {
 },
 
 
+// admin: {
+//   type: mongoose.Schema.Types.ObjectId,
+//   ref: "Admin",
+//   required: true,
+// },
 // admin: {
 //   type: mongoose.Schema.Types.ObjectId,
 //   ref: "Admin",

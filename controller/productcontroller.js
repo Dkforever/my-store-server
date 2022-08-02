@@ -10,7 +10,7 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 
   const admin = {admin:req.admin._id}; // to add admin id in product
 
-    const { name, modelList,price,category,description,color,sub_category,sub_subcategory} = req.body;
+    const { name, modelList,price,stock,category,description,color,sub_category,sub_subcategory} = req.body;
     let images = req.files.images.tempFilePath;
 
      let mycloud = await cloudinary.v2.uploader.upload(images,{ folder: "product", });  // to upload file on Cloudinary
@@ -28,6 +28,7 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
      sub_subcategory,
      description,
      color,
+     stock,
       modelList: {
         modelname: modelList,
       },

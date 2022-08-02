@@ -29,7 +29,7 @@ const router = express.Router();
 
 //  product router 
 router.route("/product").get(getProduct);
-router.route("/product/new").post(isAuthenticatedAdmin,createProduct);
+router.route("/product/new").post(createProduct);
 router.route("/product/model").post(addModel);
 router.route("/product/all").get(getallProducts);
 router.route("/product/allcateogry").get(allcategory);
